@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis2007}[2020/06/01 V2.1.3 Thesis for LZUer By yuhldr Use 2007 standard]
+\ProvidesClass{LZUThesis2021_master}[2021/12/23 V2.1.3 Thesis for LZUer By yuhldr Use 2007 standard, enhanced by PQ]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
@@ -149,9 +149,9 @@
 \RequirePackage[svgnames]{xcolor}
 
 % 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
-\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
+%\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
 \usepackage{fontspec} %用电脑上自带的字体
-
+\setmainfont{Times New Roman}
 \RequirePackage{float}%控制图片位置 参数H
 \RequirePackage[T1]{fontenc}
 
