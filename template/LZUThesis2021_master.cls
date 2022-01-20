@@ -147,7 +147,7 @@
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
-
+\usepackage{upgreek}
 % 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
 %\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
 \usepackage{fontspec} %用电脑上自带的字体
