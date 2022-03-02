@@ -592,6 +592,7 @@
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
+    \bibliography{bib/database}%bib文件名称 仅修改bib/ 后部分
     % \bibliography{\the \bibdatabase}
 }
 
