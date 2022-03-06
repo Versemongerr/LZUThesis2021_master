@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis2021_master}[2021/12/23 V2.1.3 Thesis for LZUer By yuhldr Use 2007 standard, enhanced by PQ]
+\ProvidesClass{template/LZUThesis2021_master}[2021/12/23 V2.1.3 Thesis for LZUer By yuhldr Use 2007 standard, enhanced by PQ]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
@@ -19,6 +19,7 @@
 \def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
 \def\CTEX@chapter@beforeskip{24pt}
 \def\CTEX@chapter@afterskip{18pt}
+\ctexset{chapter={fixskip=true}}
 %\def\CTEX@chapter@titleformat{\bfseries\heiti\fontspec{Times New Roman}\zihao{3}}
 %
 %%
@@ -106,7 +107,7 @@
 %页面边距
 %论文页边距一般要求：上边距3cm、下边距2.54cm,左右边距3.17cm,页眉页脚2.0cm。
 %%=======page
-\RequirePackage[top=3cm, bottom=2.54cm,outer=3.17cm, inner=3.17cm, headheight=2.0cm, footskip=2.0cm, heightrounded]{geometry}
+\RequirePackage[top=3cm, bottom=2.54cm,outer=3.17cm, inner=3.17cm, headheight=1.0cm, headsep=0.54cm, footskip=0.54cm, heightrounded]{geometry}
 
 
 %=======package
@@ -147,11 +148,11 @@
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
-\usepackage{upgreek}
+\usepackage{upgreek} %加入正体希腊字母
 % 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
-%\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
+\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
 \usepackage{fontspec} %用电脑上自带的字体
-\setmainfont{Times New Roman}
+% \setmainfont{Times New Roman}
 \RequirePackage{float}%控制图片位置 参数H
 \RequirePackage[T1]{fontenc}
 
@@ -198,7 +199,7 @@
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
-    \renewcommand\headrule{\hrule width \hsize height 2pt \kern 2pt \hrule width \hsize height 0.4pt}
+    \renewcommand\headrule{\hrule width \hsize height 0.8pt \kern 0.4pt \hrule width \hsize height 0.8pt}
 }
 
 \appto\mainmatter{\pagestyle{mainmatterstyle}}
@@ -592,8 +593,7 @@
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
-    \bibliography{bib/database}%bib文件名称 仅修改bib/ 后部分
-    % \bibliography{\the \bibdatabase}
+    \bibliography{bib/database}
 }
 
 
