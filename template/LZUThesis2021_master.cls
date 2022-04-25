@@ -169,7 +169,7 @@
 %=======head and foot
 %页眉页脚
 %1.页眉。“兰州大学本科生毕业论文（设计）”字居左排，毕业论文（设计）题目居右排，字体为宋体，小五号；页眉与正文之间用下划线分隔。
-%2.页码。页脚居中排，字体为宋体，五号。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码。
+%2.页码。页脚居中排，字体为宋体，小五。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码。
 %=======head and foot
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
 \RequirePackage{lastpage}  % Number of pages in the document
@@ -182,7 +182,7 @@
     \renewcommand{\headrulewidth}{0pt}
 
     \fancyfoot{} % clear all footer fields
-    \cfoot[C]{\thepage} %
+    \cfoot[C]{\songti\zihao{-5}{\thepage}} %
     \renewcommand{\thepage}{\Roman{page}}
 }
 \appto\frontmatter{\pagestyle{frontmatterstyle}}
@@ -194,11 +194,11 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\songti\zihao{5}兰州大学硕士学位论文}% % todo
-    \rhead{\songti\zihao{5}\@title}
+    \lhead{\songti\zihao{-5}兰州大学硕士学位论文}% % todo
+    \rhead{\songti\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
-    \cfoot[C]{\thepage}
+    \cfoot[C]{\songti\zihao{-5}{\thepage}}
     \renewcommand\headrule{\hrule width \hsize height 0.8pt \kern 0.4pt \hrule width \hsize height 0.8pt}
 }
 
@@ -283,19 +283,20 @@
       \hspace{260pt}
       {\zihao{5}\bfseries\songti 密级：公开}
 
-      {\zihao{5}\bfseries\songti \quad 分类号：TP181}
+      {\zihao{5}\bfseries\songti \quad 分类号：TP301}
     \end{flushleft}
 
     \begin{center}
+        ~\\
+        % \includegraphics[width=6cm]{lzu2007.png}\\
+        % \vspace{10pt}
+        \includegraphics[width=6.75cm]{lzu2007.png}\\
+        \includegraphics[width=10.75cm]{lzu_master.png}
+        % {\fontsize{22bp}{0pt}\ziju{1}\bfseries\songti{硕士学位论文\\}}
+        % \vspace{12pt}
+        % {\zihao{3}\bfseries\songti（学\quad 术\quad 学\quad 位）}
 
-        \includegraphics[width=6cm]{lzu2007.png}\\
-        \vspace{21.8pt}
-
-        {\fontsize{22bp}{0pt}\ziju{1}\bfseries\songti{硕士学位论文\\}}
-        %\vspace{20.8pt}
-        %{\zihao{3} \songti（\quad 学\quad 术\quad 学\quad 位\quad）}
-
-        \vspace{20.8pt}
+        \vspace{10.8pt}
         \par
         \zihao{4}
         \def\tabcolsep{6pt}
@@ -304,7 +305,7 @@
         \vspace*{10pt}
 
         \begin{tabular}{ll}
-            \bfseries\songti \zihao{4} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+            \bfseries\songti \zihao{4} 论文题目\hfill （中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
 
             % 论文题目用三号字，宋体，加粗，其他信息用小三号字，宋体，加粗，居中。
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
@@ -313,7 +314,7 @@
                     & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \bfseries\songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \bfseries\songti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \bfseries\songti  \zihao{4} 论文题目\hfill （外文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
@@ -327,22 +328,24 @@
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\the\majort}}\\[0.40cm]
             {\bfseries\songti \zihao{4}{研\hfill 究\hfill 方\hfill 向}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\research}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{学\hfill 位\hfill 级\hfill 别}} &
+            {\bfseries\songti \zihao{4}{教\hfill 育\hfill 类\hfill 型}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\education}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{导师姓名、职称}} &
+            {\bfseries\songti \zihao{4}{指\hfill 导\hfill 教\hfill 师}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{论文工作时间段}} &
+            {\bfseries\songti \zihao{4}{合\hfill 作\hfill 导\hfill 师}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\elapse}} \\[0.40cm]
-		 {\bfseries\songti \zihao{4}{论文提交日期}} &
+            {\bfseries\songti \zihao{4}{论\hfill 文\hfill 工\hfill 作\hfill 时\hfill 段}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\submitted}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{论文答辩日期}} &
+		%  {\bfseries\songti \zihao{4}{论文提交日期}} &
+        %     {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\submitted}} \\[0.40cm]
+            {\bfseries\songti \zihao{4}{论\hfill 文\hfill 答\hfill 辩\hfill 日\hfill 期}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\defense}} \\[0.40cm]
-		 {\bfseries\songti \zihao{4}{学位授予日期}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\giveda}} \\[0.40cm]
+		%  {\bfseries\songti \zihao{4}{学位授予日期}} &
+        %     {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\giveda}} \\[0.40cm]
         \end{tabular}
         \par
         \vspace{20pt}
-        {\zihao{5}\songti 校址: 甘肃省兰州市城关区天水南路 222 号}% “兰州大学教务处”这几个字，应该是雅黑
+        {\bfseries\zihao{5}\heiti 校址: 甘肃省兰州市城关区天水南路 222 号}%黑体
 
     \end{center}
     \clearpage
@@ -706,7 +709,27 @@
 \do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]\do\)\do\,
 \do\?\do\'\do+\do\=\do\#}
 
-
+% 换页算法
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled 画线
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{算法\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled 画线
+   \end{center}
+  }
+\makeatother
 
 \endinput
 %%
